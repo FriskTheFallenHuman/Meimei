@@ -36,7 +36,7 @@
     {"id":{"name":"ACTION_INTERACTIONS","path":"scripts/ACTION_INTERACTIONS/ACTION_INTERACTIONS.yy",},"order":6,},
     {"id":{"name":"PROCESS_INPUT","path":"objects/PROCESS_INPUT/PROCESS_INPUT.yy",},"order":3,},
     {"id":{"name":"PROCESS_IMAGERY","path":"objects/PROCESS_IMAGERY/PROCESS_IMAGERY.yy",},"order":5,},
-    {"id":{"name":"NOTHINGNESS","path":"rooms/NOTHINGNESS/NOTHINGNESS.yy",},"order":1,},
+    {"id":{"name":"PLACE_MEETING","path":"rooms/PLACE_MEETING/PLACE_MEETING.yy",},"order":1,},
   ],
   "Options": [
     {"name":"Windows","path":"options/windows/options_windows.yy",},
@@ -50,7 +50,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"NOTHINGNESS","path":"rooms/NOTHINGNESS/NOTHINGNESS.yy",},},
+    {"roomId":{"name":"PLACE_MEETING","path":"rooms/PLACE_MEETING/PLACE_MEETING.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/精灵.yy","order":1,"resourceVersion":"1.0","name":"精灵","tags":[],"resourceType":"GMFolder",},

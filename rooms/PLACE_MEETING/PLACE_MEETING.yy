@@ -23,8 +23,8 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_53C74A9","path":"rooms/NOTHINGNESS/NOTHINGNESS.yy",},
-    {"name":"inst_101BCE5","path":"rooms/NOTHINGNESS/NOTHINGNESS.yy",},
+    {"name":"inst_53C74A9","path":"rooms/PLACE_MEETING/PLACE_MEETING.yy",},
+    {"name":"inst_101BCE5","path":"rooms/PLACE_MEETING/PLACE_MEETING.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -52,7 +52,7 @@
     "path": "folders/房间.yy",
   },
   "resourceVersion": "1.0",
-  "name": "NOTHINGNESS",
+  "name": "PLACE_MEETING",
   "tags": [],
   "resourceType": "GMRoom",
 }
