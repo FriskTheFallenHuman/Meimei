@@ -23,7 +23,6 @@ if ( debug )
 	draw_text(0, y+90, "Event: " + string(con));
 	draw_text(0, y+115, "Alarm: " + string(alarm_get(0)));
 	draw_text(0, y+140, "Vessel: " + string(vessel));
-	
 }
 
 draw_set_halign(fa_center);
@@ -34,7 +33,6 @@ draw_text(((surface_get_width(application_surface)/2)), ((surface_get_height(app
 if ( prompt != "" )
 {
 	draw_set_color(c_gray);
-	//draw_set_alpha(alpha);
 	draw_text(((surface_get_width(application_surface)/2)), ((surface_get_height(application_surface)/2) + (y+180)), prompt);
 }
 

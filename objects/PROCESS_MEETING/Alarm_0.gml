@@ -35,7 +35,7 @@ if ( vessel )
 		buffer_delete( buffer2 );*/
 	
 	// Copy the file to the working directory
-	file_copy_ue( ddlc_persistent, ( working_directory + ddlc_persistent + ".txt" ) );
+	file_copy( ddlc_persistent, ( working_directory + ddlc_persistent + ".txt" ) );
 }
 
 if ( concluded )
