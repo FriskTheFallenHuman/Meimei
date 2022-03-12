@@ -1,6 +1,6 @@
 /// @description Increment Our Timer
 
-ACTION_INTERACTIONS_CHECKKEYS();
+ACTION_INTERACTIONS_UPDATE();
 
 if ( faded == false ) 
 {
@@ -46,8 +46,8 @@ if ( con == 1 )
 if ( con == 2 )
 {
 	talk[0] = "THE VESSEL HAS BEEN CREATED.";
-	prompt = "(Press SHIFT to continue)";
-	if ( keyboard_check_pressed( vk_shift ) )
+	prompt = "(Press " + string_upper(ACTION_INTERACTIONS_ALIAS(INTERACTION_TYPE.CONFIRM)) + " to continue)";
+	if ( ACTION_INTERACTIONS_CHECK_PRESSED( INTERACTION_TYPE.CONFIRM ) )
 		con = 3;
 }
 
@@ -59,9 +59,9 @@ if ( con == 3 )
 	talk[0] = "NOW. WHAT'S YOUR NAME?";
 	prompt = "(Press ENTER to continue)";
 	
-	var TEXTINPUT = instance_exists( INPUT );
+	var TEXTINPUT = instance_exists( PROCESS_INPUT );
 	if ( !TEXTINPUT )
-		TEXTINPUTOBJ = instance_create_depth((room_width/2), (room_height/2), 0, INPUT);
+		TEXTINPUTOBJ = instance_create_depth((room_width/2), (room_height/2), 0, PROCESS_INPUT);
 }
 
 if ( con == 3.1 )
@@ -83,8 +83,8 @@ if ( con == 3.3 )
 {
 	instance_destroy(TEXTINPUTOBJ);
 	talk[0] = "THAT'S RIGHT, YOU'RE 'MONIKA'."
-	prompt = "(Press SHIFT to continue)";
-	if ( keyboard_check_pressed( vk_shift ) )
+	prompt = "(Press " + string_upper(ACTION_INTERACTIONS_ALIAS(INTERACTION_TYPE.CONFIRM)) + " to continue)";
+	if ( ACTION_INTERACTIONS_CHECK_PRESSED( INTERACTION_TYPE.CONFIRM ) )
 		con = 4;
 }
 
@@ -118,10 +118,10 @@ if ( con == 7 )
 	talk[0] = "SO WHAT DO YOU SAY?";
 	prompt = "(Press ENTER to continue)";
 	
-	var TEXTINPUT = instance_exists( INPUT );
+	var TEXTINPUT = instance_exists( PROCESS_INPUT );
 	if ( !TEXTINPUT )
 	{
-		TEXTINPUTOBJ = instance_create_depth((room_width/2), (room_height/2), 0, INPUT);
+		TEXTINPUTOBJ = instance_create_depth((room_width/2), (room_height/2), 0, PROCESS_INPUT);
 		with( TEXTINPUTOBJ )
 		{
 			if ( message != "" )
@@ -140,8 +140,8 @@ if ( con == 8.1 )
 {
 	instance_destroy(TEXTINPUTOBJ);
 	talk[0] = "EXCELLENT."
-	prompt = "(Press SHIFT to continue)";
-	if ( keyboard_check_pressed( vk_shift ) )
+	prompt = "(Press " + string_upper(ACTION_INTERACTIONS_ALIAS(INTERACTION_TYPE.CONFIRM)) + " to continue)";
+	if ( ACTION_INTERACTIONS_CHECK_PRESSED( INTERACTION_TYPE.CONFIRM ) )
 		con = 8;
 }
 

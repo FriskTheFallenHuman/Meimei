@@ -31,11 +31,11 @@ var tempy = 150;
 if ( center_text )
 	tempy = 0;
 draw_text(((surface_get_width(application_surface)/2)), ((surface_get_height(application_surface)/2) + (y+tempy)), talk[0]);
-if ( subtitle )
+if ( prompt != "" )
 {
 	draw_set_color(c_gray);
 	//draw_set_alpha(alpha);
-	draw_text(((surface_get_width(application_surface)/2)), ((surface_get_height(application_surface)/2) + (y+180)), talk[1]);
+	draw_text(((surface_get_width(application_surface)/2)), ((surface_get_height(application_surface)/2) + (y+180)), prompt);
 }
 
 surface_reset_target();

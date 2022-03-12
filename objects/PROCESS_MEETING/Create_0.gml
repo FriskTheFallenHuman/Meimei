@@ -1,9 +1,6 @@
 /// @description Init the THING
 if ( debug )
 	show_debug_overlay( true );
-	
-// Set our title
-window_set_caption( "M̶̧͔̮̣̙͍̈́̐͛̓͐̃͝ë̶̮͖͔́̽͐̓̾̆̾͝í̶̜̓̕m̷̡͓͉̠̰̪̙̯͔̙̙̞̖̳̖̑e̸̘̪̩̬̗̙͓̲̠͎̰̻̣̺̭͌̍̈̈́̃̉͝i̴̲͊͗̊͛͗́̿̽͘͝ͅ" );
 
 // Global Surface
 global.textsurface = noone;
