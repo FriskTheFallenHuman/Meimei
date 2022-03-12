@@ -2,9 +2,6 @@
 if ( debug )
 	show_debug_overlay( true );
 
-// Global Surface
-global.textsurface = noone;
-
 // Music
 audio_play_sound(AUDIO_MEETING, 100, true);
 

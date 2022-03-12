@@ -1,3 +1,9 @@
+var _h = display_get_gui_height();
+var _w = display_get_gui_width();
+
+if (!surface_exists(global.textsurface))
+    global.textsurface = surface_create(_w, _h);
+
 //activating the shader
 
 //if (os_device == os_macosx){

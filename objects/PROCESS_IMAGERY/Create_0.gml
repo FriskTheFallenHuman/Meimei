@@ -1,3 +1,6 @@
+// Global Surface
+global.textsurface = noone;
+
 //////////////////////////////////
 //                              //
 //   BktGlitch 1.0              //
