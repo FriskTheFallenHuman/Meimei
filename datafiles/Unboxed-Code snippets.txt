@@ -1,0 +1,52 @@
+﻿var path = "e:/temp/"; // Change this to your own testing environment.
+
+// Create a new directory
+directory_create_ue(path + "data");
+// Verify "data" directory exists
+if (directory_exists_ue(path + "data"))
+    show_message("Directory 'data' existed.");
+else
+    show_message("[Failed] Directory 'data' not existed.");
+   
+// Rename "data" to "data_renamed"
+directory_rename_ue(path + "data", path + "data_renamed");
+
+// Verify "data_renamed" directory exists
+if (directory_exists_ue(path + "data_renamed"))
+    show_message("Directory 'data_renamed' existed.");
+else
+    show_message("[Failed] Directory 'data_renamed' not existed.");
+   
+// Create a new file at the same directory with the game
+var f = file_text_open_write_ue(path + "data.txt");
+// Write some texts to it
+file_text_writeln_ue(f, "Hello, World!");
+file_text_writeln_ue(f, "こんにちは！");
+// Close the file
+file_text_close_ue(f);
+
+// Reopen file to write additional data at the end of the file
+var f = file_text_open_append_ue(path + "data.txt");
+file_text_writeln_ue(f, "Bye!");
+file_text_close_ue(f);
+
+// Open file, read all the content in the file and print to output window
+var f = file_text_open_read_ue(path + "data.txt");
+show_message("--- data.txt content ---");
+while (!file_text_eof_ue(f)) {
+    show_message(file_text_readln_ue(f));
+}
+file_text_close_ue(f);
+
+// Copy "data.txt" to "ファイル.txt"
+file_copy_ue(path + "data.txt", path + "ファイル.txt");
+
+// List all files and directories
+show_message("--- Directory contents ---");
+for (var f = file_find_first_ue(path + "*"); f != ""; f = file_find_next_ue()) {
+    if (file_find_attributes_ue() & fa_directory)
+        show_message(f + " [DIR]");
+    else
+        show_message(f + " (" + string(file_find_size_ue()) + " bytes)");
+}
+file_find_close_ue();
