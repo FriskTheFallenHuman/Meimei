@@ -28,15 +28,13 @@ if ( con == 0 )
 if ( con == 1 )
 {
 	talk[0] = "MOLDING THE VESSEL AT HER OWN IMAGE.";
-	if ( file_exists_ue( ddlc_persistent ) || ( debug & file_exists( ddlc_persistent ) ) )
+
+	if ( file_exists( ddlc_persistent ) )
 		vessel = true;
 	else
 	{
 		talk[0] = "BUT THERE WAS NOTHING TO SHAPE FROM.";
 		found = false;
-		
-		if ( !alarm[0] )
-			alarm[0] = 4*room_speed; // Aborting...
 	}
 	
 	if( !alarm[0] )
@@ -57,7 +55,7 @@ if ( con == 3 )
 		alarm[0] = -1;
 
 	talk[0] = "NOW. WHAT'S YOUR NAME?";
-	prompt = "(Press ENTER to continue)";
+	prompt = "(Press " + string_upper(ACTION_INTERACTIONS_ALIAS(INTERACTION_TYPE.INPUT_CONFIRM)) + " to continue)";
 	
 	var TEXTINPUT = instance_exists( PROCESS_INPUT );
 	if ( !TEXTINPUT )
@@ -116,7 +114,7 @@ if ( con == 7 )
 		alarm[0] = -1;
 
 	talk[0] = "SO WHAT DO YOU SAY?";
-	prompt = "(Press ENTER to continue)";
+	prompt = "(Press " + string_upper(ACTION_INTERACTIONS_ALIAS(INTERACTION_TYPE.INPUT_CONFIRM)) + " to continue)";
 	
 	var TEXTINPUT = instance_exists( PROCESS_INPUT );
 	if ( !TEXTINPUT )

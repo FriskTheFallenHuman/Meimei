@@ -14,11 +14,12 @@ var temptext = "setup";
 var xtext = 70;
 if ( offert )
 {
-	temptext = "agreetment";
+	temptext = "agreement";
 	xtext = 100;
 }
 draw_text_color(x+xtext, y-1, temptext, c_white, c_white, c_white, c_white, 1);
 draw_text(x, y+25, message + cursor);
+draw_text(x, y+25+(string_width(message) / 2), cursor);
 
 surface_reset_target();
 gpu_set_blendmode(bm_dest_alpha);

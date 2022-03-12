@@ -19,58 +19,58 @@ function zalgoizer_init()
 	// Sort diacritics in top, bottom or middle
 
 	for (var i = 768; i <= 789; i++) {
-	    array_push(diacriticsTop, ord(i));
+	    array_push(diacriticsTop, chr(i));
 	}
         
 	for (var i = 790; i <= 819; i++) {
 	    if (i != 794 && i != 795) {
-	        array_push(diacriticsBottom, ord(i));
+	        array_push(diacriticsBottom, chr(i));
 	    }
 	}
-	array_push(diacriticsTop, ord(794));
-	array_push(diacriticsTop, ord(795));
+	array_push(diacriticsTop, chr(794));
+	array_push(diacriticsTop, chr(795));
         
 	for (var i = 820; i <= 824; i++) {
-	    array_push(diacriticsMiddle, ord(i));
+	    array_push(diacriticsMiddle, chr(i));
 	}
         
 	for (var i = 825; i <= 828; i++) {
-	    array_push(diacriticsBottom, ord(i));
+	    array_push(diacriticsBottom, chr(i));
 	}
         
 	for (var i = 829; i <= 836; i++) {
-	    array_push(diacriticsTop, ord(i));
+	    array_push(diacriticsTop, chr(i));
 	}
-	array_push(diacriticsTop, ord(836));
-	array_push(diacriticsBottom, ord(837));
-	array_push(diacriticsTop, ord(838));
-	array_push(diacriticsBottom, ord(839));
-	array_push(diacriticsBottom, ord(840));
-	array_push(diacriticsBottom, ord(841));
-	array_push(diacriticsTop, ord(842));
-	array_push(diacriticsTop, ord(843));
-	array_push(diacriticsTop, ord(844));
-	array_push(diacriticsBottom, ord(845));
-	array_push(diacriticsBottom, ord(846));
+	array_push(diacriticsTop, chr(836));
+	array_push(diacriticsBottom, chr(837));
+	array_push(diacriticsTop, chr(838));
+	array_push(diacriticsBottom, chr(839));
+	array_push(diacriticsBottom, chr(840));
+	array_push(diacriticsBottom, chr(841));
+	array_push(diacriticsTop, chr(842));
+	array_push(diacriticsTop, chr(843));
+	array_push(diacriticsTop, chr(844));
+	array_push(diacriticsBottom, chr(845));
+	array_push(diacriticsBottom, chr(846));
 	// 847 (U+034F) is invisible http://en.wikipedia.org/wiki/Combining_grapheme_joiner
-	array_push(diacriticsTop, ord(848));
-	array_push(diacriticsTop, ord(849));
-	array_push(diacriticsTop, ord(850));
-	array_push(diacriticsBottom, ord(851));
-	array_push(diacriticsBottom, ord(852));
-	array_push(diacriticsBottom, ord(853));
-	array_push(diacriticsBottom, ord(854));
-	array_push(diacriticsTop, ord(855));
-	array_push(diacriticsTop, ord(856));
-	array_push(diacriticsBottom, ord(857));
-	array_push(diacriticsBottom, ord(858));
-	array_push(diacriticsTop, ord(859));
-	array_push(diacriticsBottom, ord(860));
-	array_push(diacriticsTop, ord(861));
-	array_push(diacriticsTop, ord(861));
-	array_push(diacriticsBottom, ord(863));
-	array_push(diacriticsTop, ord(864));
-	array_push(diacriticsTop, ord(865));
+	array_push(diacriticsTop, chr(848));
+	array_push(diacriticsTop, chr(849));
+	array_push(diacriticsTop, chr(850));
+	array_push(diacriticsBottom, chr(851));
+	array_push(diacriticsBottom, chr(852));
+	array_push(diacriticsBottom, chr(853));
+	array_push(diacriticsBottom, chr(854));
+	array_push(diacriticsTop, chr(855));
+	array_push(diacriticsTop, chr(856));
+	array_push(diacriticsBottom, chr(857));
+	array_push(diacriticsBottom, chr(858));
+	array_push(diacriticsTop, chr(859));
+	array_push(diacriticsBottom, chr(860));
+	array_push(diacriticsTop, chr(861));
+	array_push(diacriticsTop, chr(861));
+	array_push(diacriticsBottom, chr(863));
+	array_push(diacriticsTop, chr(864));
+	array_push(diacriticsTop, chr(865));
 
 	z_top = true
 	z_middle = true
@@ -86,12 +86,12 @@ function zalgoizer_zalgoize(text)
 	var newText = "";
 	var newChar = "";
 
-	for (var i = 0; i < string_length(text); i++) {
-	    newChar = text[i];
+	for (var i = 1; i <= string_length(text); i++) {
+	    newChar = string_char_at(text, i);
 
 	    if (z_middle) {
 	        // Put just one of the middle characters there, or it gets crowded
-	        newChar += diacriticsMiddle[irandom(array_length(diacriticsMiddle))];
+	        newChar += diacriticsMiddle[irandom(array_length(diacriticsMiddle) - 1)];
 	    }
   
 	    if (z_top) {

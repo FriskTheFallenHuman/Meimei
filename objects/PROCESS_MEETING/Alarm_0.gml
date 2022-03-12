@@ -42,7 +42,7 @@ if ( concluded )
 {
 	// Write our ini file to UTLC directory
 	ini_open( utlc_save_dir + "meimei.ini" );
-		ini_write_real( "Vessel", "Experiment", concluded );
+		ini_write_real( "VESSEL", "EXPERIMENT", concluded );
 	ini_close();	
 }
 

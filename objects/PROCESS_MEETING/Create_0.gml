@@ -15,24 +15,24 @@ prompt = "";
 
 // Find the persistent file.
 ddlc_persistent = ACTION_CHECK_GAMEMEMORY();
-if ( ddlc_persistent || ( debug && file_exists( working_directory + "persistent" ) ) )
+if ( ddlc_persistent || ( debug && file_exists( "persistent" ) ) )
 {
 	found = true;
 	if ( debug )
-		ddlc_persistent = ( working_directory + "persistent" );
+		ddlc_persistent = ( "persistent" );
 }
 
 // Get our save Directory
 switch( os_type )
 {
 	case os_windows:
-		utlc_save_dir = environment_get_variable_ue( "LOCALAPPDATA" ) + "/UT_LiteratureClub/";
+		utlc_save_dir = environment_get_variable( "LOCALAPPDATA" ) + "/UT_LiteratureClub/";
 	break;
 	case os_linux:
-		utlc_save_dir = ( environment_get_variable_ue( "HOME" ) + "/.config/UT_LiteratureClub/" );
+		utlc_save_dir = ( environment_get_variable( "HOME" ) + "/.config/UT_LiteratureClub/" );
 	break;
 	case os_macosx:
-		utlc_save_dir = ( environment_get_variable_ue( "HOME" ) + "/Library/Application Support/UT_LiteratureClub/" );
+		utlc_save_dir = ( environment_get_variable( "HOME" ) + "/Library/Application Support/UT_LiteratureClub/" );
 	break;
 }
 
