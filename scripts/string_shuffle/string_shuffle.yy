@@ -1,8 +1,12 @@
 {
-    "id": "b0ad7f4c-5999-45d0-939c-252de1bccbcd",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "string_shuffle",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "脚本",
+    "path": "folders/脚本.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "string_shuffle",
+  "tags": [],
+  "resourceType": "GMScript",
 }

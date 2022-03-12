@@ -11,19 +11,19 @@
 
 /*
 
-See Draw GUI of objControl for setup instructions.
-Easier example available in objSimpleExample, change the room order to see it in action.
+	See Draw GUI of objControl for setup instructions.
+	Easier example available in objSimpleExample, change the room order to see it in action.
 
-I recommend you use the provided setup GML scripts (see "BktGlitch" in Scripts) to control the
-shader rather then accessing the uniforms directly, this requires you run "BktGlitch_init()"
-at the start of the game. 
+	I recommend you use the provided setup GML scripts (see "BktGlitch" in Scripts) to control the
+	shader rather then accessing the uniforms directly, this requires you run "BktGlitch_init()"
+	at the start of the game. 
 
-If you don't want to set over 10 properties manually, you can use one of the available presets - see "BktGlitch_config_preset()".
+	If you don't want to set over 10 properties manually, you can use one of the available presets - see "BktGlitch_config_preset()".
 
-Changes:
+	Changes:
 
-1.1 - increased compatibility with mobile devices
-1.2 - added a version of without precision specifications due to issues on OS X
+	1.1 - increased compatibility with mobile devices
+	1.2 - added a version of without precision specifications due to issues on OS X
 
 */
 

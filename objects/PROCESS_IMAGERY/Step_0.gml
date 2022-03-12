@@ -1,0 +1,1 @@
+intensity = max(0, intensity - .07);
