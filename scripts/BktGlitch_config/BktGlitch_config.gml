@@ -16,27 +16,32 @@
 /// @param  intensity
 /// @param  rngSeed
 /// @param  time
-/*
-    One-liner that configures almost all properties of the shader. 
+function BktGlitch_config(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10, argument11, argument12, argument13, argument14, argument15) {
+	/*
+	    One-liner that configures almost all properties of the shader. 
     
-    Resolution needs to be set separately.
+	    Resolution needs to be set separately.
     
-    ONLY RUN WHILE THE SHADER IS ACTIVE!
-*/
+	    ONLY RUN WHILE THE SHADER IS ACTIVE!
+	*/
 
-BktGlitch_set_line_shift(argument0);
-BktGlitch_set_line_speed(argument1);
-BktGlitch_set_line_resolution(argument2);
-BktGlitch_set_line_drift(argument3);
-BktGlitch_set_line_vertical_shift(argument4);
-BktGlitch_set_jumbleness(argument5);
-BktGlitch_set_jumble_speed(argument6);
-BktGlitch_set_jumble_resolution(argument7);
-BktGlitch_set_jumble_shift(argument8);
-BktGlitch_set_noise_level(argument9);
-BktGlitch_set_channel_shift(argument10);
-BktGlitch_set_channel_dispersion(argument11);
-BktGlitch_set_shakiness(argument12);
-BktGlitch_set_intensity(argument13);
-BktGlitch_set_rng_seed(argument14);
-BktGlitch_set_time(argument15);
+	BktGlitch_set_line_shift(argument0);
+	BktGlitch_set_line_speed(argument1);
+	BktGlitch_set_line_resolution(argument2);
+	BktGlitch_set_line_drift(argument3);
+	BktGlitch_set_line_vertical_shift(argument4);
+	BktGlitch_set_jumbleness(argument5);
+	BktGlitch_set_jumble_speed(argument6);
+	BktGlitch_set_jumble_resolution(argument7);
+	BktGlitch_set_jumble_shift(argument8);
+	BktGlitch_set_noise_level(argument9);
+	BktGlitch_set_channel_shift(argument10);
+	BktGlitch_set_channel_dispersion(argument11);
+	BktGlitch_set_shakiness(argument12);
+	BktGlitch_set_intensity(argument13);
+	BktGlitch_set_rng_seed(argument14);
+	BktGlitch_set_time(argument15);
+
+
+
+}

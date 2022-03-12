@@ -1,8 +1,12 @@
 {
-    "id": "50df19e6-b907-44fc-8aed-2a868872fc38",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "BktGlitch_set_shakiness",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "parameters",
+    "path": "folders/脚本/BktGlitch/parameters.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "BktGlitch_set_shakiness",
+  "tags": [],
+  "resourceType": "GMScript",
 }
