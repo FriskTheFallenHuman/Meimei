@@ -79,7 +79,6 @@
   "IncludedFiles": [
     {"CopyToMask":0,"filePath":"datafiles","resourceVersion":"1.0","name":"Unboxed-Code snippets.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":0,"filePath":"datafiles","resourceVersion":"1.0","name":"Unboxed-README.txt","resourceType":"GMIncludedFile",},
-    {"CopyToMask":3035461389054378222,"filePath":"datafiles","resourceVersion":"1.0","name":"persistent","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2022.2.1.618",
