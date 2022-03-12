@@ -104,7 +104,7 @@
     "path": "folders/物体.yy",
   },
   "resourceVersion": "1.0",
-  "name": "INPUT",
+  "name": "PROCESS_INPUT",
   "tags": [],
   "resourceType": "GMObject",
 }

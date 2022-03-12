@@ -117,7 +117,4 @@ function BktGlitch_config_preset(argument0) {
 	    default:
 	        BktGlitch_config_zero();
 	}
-
-
-
 }

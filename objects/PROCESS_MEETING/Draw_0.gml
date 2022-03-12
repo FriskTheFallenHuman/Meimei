@@ -18,9 +18,9 @@ draw_set_color(c_white);
 if ( debug )
 {
 	draw_text_ext_color(((view_xport[0]) + 240), y+10, ">> DEBUG MODE <<", 5, 300, c_purple, c_purple, c_white, c_white, 1);
-	draw_text(0, y+40, "Persisten File: " + string(ddlc_persistent));
-	draw_text(0, y+65, "Is Done: " + string(is_done));
-	draw_text(0, y+90, "Con: " + string(con));
+	draw_text(0, y+40, "Persistent: " + string(ddlc_persistent));
+	draw_text(0, y+65, "Complete: " + string(is_done));
+	draw_text(0, y+90, "Event: " + string(con));
 	draw_text(0, y+115, "Alarm: " + string(alarm_get(0)));
 	draw_text(0, y+140, "Vessel: " + string(vessel));
 	

@@ -15,5 +15,5 @@ BktGlitch_init(); //getting uniform pointers
 application_surface_draw_enable(false); //disabling automatic redrawing of the application surface
 display_set_gui_size(640, 480); //making sure the GUI layer stays always the same size
 
-global.ballHit = 0; //every time the ball bounces, we'll change the effect intensity
-global.seed = random(1); //we'll also change the RNG seed every time
+intensity = 0; //every time the ball bounces, we'll change the effect intensity
+seed = random(1); //we'll also change the RNG seed every time

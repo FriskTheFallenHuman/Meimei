@@ -177,7 +177,7 @@
     "path": "folders/物体.yy",
   },
   "resourceVersion": "1.0",
-  "name": "THING",
+  "name": "PROCESS_MEETING",
   "tags": [],
   "resourceType": "GMObject",
 }

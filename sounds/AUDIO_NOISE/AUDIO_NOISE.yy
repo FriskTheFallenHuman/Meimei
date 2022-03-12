@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "NOISE",
+  "soundFile": "AUDIO_NOISE",
   "duration": 0.0,
   "parent": {
     "name": "声音",
     "path": "folders/声音.yy",
   },
   "resourceVersion": "1.0",
-  "name": "NOISE",
+  "name": "AUDIO_NOISE",
   "tags": [],
   "resourceType": "GMSound",
 }

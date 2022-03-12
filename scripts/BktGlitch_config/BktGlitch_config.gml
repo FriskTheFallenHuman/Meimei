@@ -41,7 +41,4 @@ function BktGlitch_config(argument0, argument1, argument2, argument3, argument4,
 	BktGlitch_set_intensity(argument13);
 	BktGlitch_set_rng_seed(argument14);
 	BktGlitch_set_time(argument15);
-
-
-
 }

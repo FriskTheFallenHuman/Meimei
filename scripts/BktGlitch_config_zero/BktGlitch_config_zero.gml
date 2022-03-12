@@ -25,7 +25,4 @@ function BktGlitch_config_zero() {
 	BktGlitch_set_intensity(0);
 	BktGlitch_set_rng_seed(0);
 	BktGlitch_set_time(0);
-
-
-
 }

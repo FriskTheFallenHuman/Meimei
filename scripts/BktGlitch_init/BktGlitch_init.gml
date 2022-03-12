@@ -50,8 +50,4 @@ function BktGlitch_init() {
 	global.bktGlitchUniform[bktGlitch.intensity] = shader_get_uniform(shdBktGlitch, "intensity"); 
 	global.bktGlitchUniform[bktGlitch.time] = shader_get_uniform(shdBktGlitch, "time");   
 	global.bktGlitchUniform[bktGlitch.resolution] = shader_get_uniform(shdBktGlitch, "resolution");
-
-
-
-
 }

@@ -11,7 +11,4 @@ function BktGlitch_set_resolution_of_application_surface() {
 	if (surface_exists(application_surface)){
 	    shader_set_uniform_f(global.bktGlitchUniform[bktGlitch.resolution], surface_get_width(application_surface), surface_get_height(application_surface));
 	}
-
-
-
 }

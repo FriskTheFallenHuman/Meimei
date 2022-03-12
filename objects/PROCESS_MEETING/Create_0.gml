@@ -9,32 +9,19 @@ window_set_caption( "M̶̧͔̮̣̙͍̈́̐͛̓͐̃͝ë̶̮͖͔́̽͐̓̾̆̾͝í̶
 global.textsurface = noone;
 
 // Music
-audio_play_sound(BACKGROUND, 100, true);
+audio_play_sound(AUDIO_MEETING, 100, true);
 
 // Init our text array
 for ( var i = 0; i < 1; i++ )
 	talk[i] = noone;
+prompt = "";
 
-// Find the persisten file.
-if ( locate_persistent_file() || ( debug && file_exists( working_directory + "persistent" ) ) )
+// Find the persistent file.
+ddlc_persistent = ACTION_CHECK_GAMEMEMORY();
+if ( ddlc_persistent || ( debug && file_exists( working_directory + "persistent" ) ) )
 {
 	found = true;
-	if ( !debug )
-	{
-		switch( os_type )
-		{
-			case os_windows:
-				ddlc_persistent = ( environment_get_variable_ue( "APPDATA" ) + "/RenPy/DDLC-1454445547/persistent" );
-			break;
-			case os_linux:
-				ddlc_persistent = ( environment_get_variable_ue( "HOME" ) + "/.renpy/DDLC-1454445547/persistent" );
-			break;
-			case os_macosx:
-				ddlc_persistent = ( environment_get_variable_ue( "HOME" ) + "/Library/RenPy/DDLC-1454445547/persistent" );
-			break;
-		}
-	}
-	else
+	if ( debug )
 		ddlc_persistent = ( working_directory + "persistent" );
 }
 
@@ -54,7 +41,7 @@ switch( os_type )
 
 // Write our ini file to UTLC directory
 ini_open( utlc_save_dir + "meimei.ini" );
-ini_write_real( "Vessel", "Meeting", 0 );
+ini_write_real( "VESSEL", "MEETING", 0 );
 ini_close();
 
 // Start our timer

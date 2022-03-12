@@ -42,7 +42,7 @@
     "path": "folders/物体.yy",
   },
   "resourceVersion": "1.0",
-  "name": "GLITCH",
+  "name": "PROCESS_IMAGERY",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -10,7 +10,4 @@ function BktGlitch_set_resolution_of_gui() {
 	if (surface_exists(application_surface)){
 	    shader_set_uniform_f(global.bktGlitchUniform[bktGlitch.resolution], display_get_gui_width(), display_get_gui_height());
 	}
-
-
-
 }

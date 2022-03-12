@@ -6,7 +6,7 @@
     "path": "folders/脚本.yy",
   },
   "resourceVersion": "1.0",
-  "name": "locate_persistent_file",
+  "name": "ACTION_INTERACTIONS",
   "tags": [],
   "resourceType": "GMScript",
 }

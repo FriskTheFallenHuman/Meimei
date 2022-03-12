@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "BACKGROUND",
-  "duration": 0.0,
+  "soundFile": "AUDIO_MEETING",
+  "duration": 5.356168,
   "parent": {
     "name": "声音",
     "path": "folders/声音.yy",
   },
   "resourceVersion": "1.0",
-  "name": "BACKGROUND",
+  "name": "AUDIO_MEETING",
   "tags": [],
   "resourceType": "GMSound",
 }
