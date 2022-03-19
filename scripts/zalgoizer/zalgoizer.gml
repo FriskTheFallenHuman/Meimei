@@ -75,7 +75,7 @@ function zalgoizer_init()
 	z_top = true
 	z_middle = true
 	z_bottom = true
-	z_maxHeight = 15
+	z_maxHeight = 32
 	z_randomization = 100
 }
 
