@@ -1,3 +1,6 @@
+// Huge input system
+// By Dobby233Liu
+
 enum INTERACTION_TYPE {
 	CONFIRM,
 	INPUT_CONFIRM
@@ -8,6 +11,14 @@ enum INTERACTION_STATUS {
 	PRESSED,
 	RELEASED
 }
+
+global.KEYCODE_ALIASES[vk_enter] = "Enter";
+global.KEYCODE_ALIASES[vk_shift] = "Shift";
+global.KEYCODE_ALIASES[vk_control] = "Ctrl";
+global.KEYCODE_ALIASES[ord("Z")] = "Z";
+global.KEYCODE_ALIASES[ord("X")] = "X";
+global.KEYCODE_ALIASES[ord("C")] = "C";
+
 
 
 function INTERACTION_MAPPINGS() constructor
@@ -21,6 +32,33 @@ function INTERACTION_MAPPINGS() constructor
     }
 }
 
+function INTERACTION_MAPPING_KEY_KEYBOARD(_KEYCODE) constructor
+{
+	KEYCODE = _KEYCODE;
+
+	static IS_HELD = function()
+	{
+		return keyboard_check(KEYCODE);
+	}
+	static IS_PRESSED = function()
+	{
+		return keyboard_check_pressed(KEYCODE);
+	}
+	static IS_RELEASED = function()
+	{
+		return keyboard_check_released(KEYCODE);
+	}
+
+	static GET_ALIAS = function()
+	{
+		return global.KEYCODE_ALIASES[KEYCODE];
+	}
+	static toString = function()
+	{
+		return GET_ALIAS();
+	}
+}
+
 function INTERACTION_MAPPING(_KEYS) constructor
 {
 	KEYS = _KEYS;
@@ -31,18 +69,18 @@ function INTERACTION_MAPPING(_KEYS) constructor
 		for (var INDEX = 0; INDEX < array_length(KEYS); INDEX++)
 		{
 			var KEY = KEYS[INDEX];
-			if keyboard_check_pressed(KEY.KEYCODE)
+			if KEY.IS_PRESSED()
 				&& DISPATCHING_STATUS != INTERACTION_STATUS.HOLD
 			{
 				DISPATCHING_STATUS = INTERACTION_STATUS.PRESSED;
 			}
-			else if keyboard_check_released(KEY.KEYCODE)
+			else if KEY.IS_RELEASED()
 				&& DISPATCHING_STATUS != INTERACTION_STATUS.HOLD
 				&& DISPATCHING_STATUS != INTERACTION_STATUS.PRESSED
 			{
 				DISPATCHING_STATUS = INTERACTION_STATUS.RELEASED;
 			}
-			else if keyboard_check(KEY.KEYCODE)
+			else if KEY.IS_HELD()
 			{
 				DISPATCHING_STATUS = INTERACTION_STATUS.HOLD;
 			}
@@ -59,23 +97,13 @@ function INTERACTION_MAPPING(_KEYS) constructor
 		}
     }
 }
-function INTERACTION_MAPPING_KEY(_KEYCODE, _ALIAS) constructor
-{
-	KEYCODE = _KEYCODE;
-	ALIAS = _ALIAS;
-
-	static toString = function()
-	{
-		return ALIAS;
-	}
-}
 
 
 var INTERACTION_KEYS = {
-	SHIFT: new INTERACTION_MAPPING_KEY(vk_shift, "shift"),
-	ENTER: new INTERACTION_MAPPING_KEY(vk_enter, "enter"),
-	// Z: new INTERACTION_MAPPING_KEY(ord("Z"), "Z"),
-	X: new INTERACTION_MAPPING_KEY(ord("X"), "X")
+	SHIFT: new INTERACTION_MAPPING_KEY_KEYBOARD(vk_shift),
+	ENTER: new INTERACTION_MAPPING_KEY_KEYBOARD(vk_enter),
+	// Z: new INTERACTION_MAPPING_KEY_KEYBOARD(ord("Z")),
+	X: new INTERACTION_MAPPING_KEY_KEYBOARD(ord("X"))
 };
 global.INTERACTION_MAPPINGS = new INTERACTION_MAPPINGS();
 global.INTERACTION_MAPPINGS.SET_MAPPING(
@@ -114,7 +142,7 @@ function ACTION_INTERACTIONS_ALIAS(INTERACTION, TYPE = -1)
 	{
 		return array_join(KEYS, "/");
 	}
-	return KEYS[TYPE].ALIAS;
+	return string(KEYS[TYPE]);
 }
 
 function ACTION_INTERACTIONS_UPDATE()

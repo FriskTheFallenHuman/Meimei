@@ -1,7 +1,5 @@
 /// @description Increment Our Timer
 
-ACTION_INTERACTIONS_UPDATE();
-
 if ( faded == false ) 
 {
    if ( alpha > 0 ) 

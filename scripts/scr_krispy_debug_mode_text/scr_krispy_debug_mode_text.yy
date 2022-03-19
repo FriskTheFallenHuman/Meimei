@@ -6,7 +6,7 @@
     "path": "folders/脚本.yy",
   },
   "resourceVersion": "1.0",
-  "name": "zalgoizer",
+  "name": "scr_krispy_debug_mode_text",
   "tags": [],
   "resourceType": "GMScript",
 }

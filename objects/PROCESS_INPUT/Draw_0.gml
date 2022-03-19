@@ -17,5 +17,6 @@ if ( offert )
 draw_text_color(x+xtext, y-1, temptext, c_white, c_white, c_white, c_white, 1);
 draw_text(x, y+25, message);
 draw_text(x+(string_width(message)/2), y+25, cursor);
+draw_set_valign(fa_top);
 
 surface_reset_target();
