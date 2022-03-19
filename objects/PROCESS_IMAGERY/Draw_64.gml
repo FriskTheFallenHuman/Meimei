@@ -1,3 +1,4 @@
+display_set_gui_size(-1, -1);
 var _h = display_get_gui_height();
 var _w = display_get_gui_width();
 
@@ -14,6 +15,8 @@ shader_set(shdBktGlitch);
 
 //setting the resolution
 BktGlitch_set_resolution_of_application_surface();
+
+randomise();
 
 //passing time to the shader (making sure nothing stays static)
 BktGlitch_set_time(current_time * 0.06);
