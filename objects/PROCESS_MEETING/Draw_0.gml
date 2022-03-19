@@ -1,14 +1,9 @@
 /// @description Debug Information/Actual drawing
-var _h = display_get_gui_height();
-var _w = display_get_gui_width();
 
-if (!surface_exists(global.textsurface))
-    global.textsurface = surface_create(_w, _h);
+if (!instance_exists(PROCESS_IMAGERY) || !surface_exists(global.textsurface))
+	return;
 
 surface_set_target(global.textsurface);
-
-//gpu_set_blendenable(0);
-draw_clear_alpha(c_black, 0);
 
 draw_set_font(fnt_main);
 draw_set_halign(fa_left);
@@ -30,12 +25,11 @@ var tempy = 150;
 if ( center_text )
 	tempy = 0;
 draw_text(((surface_get_width(application_surface)/2)), ((surface_get_height(application_surface)/2) + (y+tempy)), talk[0]);
+tempy += 30
 if ( prompt != "" )
 {
 	draw_set_color(c_gray);
-	draw_text(((surface_get_width(application_surface)/2)), ((surface_get_height(application_surface)/2) + (y+180)), prompt);
+	draw_text(((surface_get_width(application_surface)/2)), ((surface_get_height(application_surface)/2) + (y+tempy)), prompt);
 }
 
 surface_reset_target();
-gpu_set_blendmode(bm_dest_alpha);
-draw_surface(global.textsurface, 0, 0);

@@ -76,10 +76,7 @@
   "TextureGroups": [
     {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
   ],
-  "IncludedFiles": [
-    {"CopyToMask":0,"filePath":"datafiles","resourceVersion":"1.0","name":"Unboxed-Code snippets.txt","resourceType":"GMIncludedFile",},
-    {"CopyToMask":0,"filePath":"datafiles","resourceVersion":"1.0","name":"Unboxed-README.txt","resourceType":"GMIncludedFile",},
-  ],
+  "IncludedFiles": [],
   "MetaData": {
     "IDEVersion": "2022.2.1.618",
   },

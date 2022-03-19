@@ -34,7 +34,13 @@ BktGlitch_set_intensity(0.05 + intensity); //adding additional intensity when th
 
 //drawing the application surface
 draw_surface(application_surface, 0, 0);
+gpu_set_blendmode(bm_dest_alpha);
+draw_surface(global.textsurface, 0, 0);
+gpu_set_blendmode(bm_normal);
 
 //done using the shader
 shader_reset();
 
+surface_set_target(global.textsurface);
+draw_clear_alpha(c_black, 0);
+surface_reset_target();

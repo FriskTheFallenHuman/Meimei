@@ -8,7 +8,7 @@ else
     keyboard_string = message;
 
 // Saved our string
-if ( ACTION_INTERACTIONS_CHECK_PRESSED(INTERACTION_TYPE.INPUT_CONFIRM) )
+if ( INTERACTIONS_CHECK_PRESSED(INTERACTION_TYPE.INPUT_CONFIRM) )
 {
 	save_message = string_lower( message );
 	saved = true;

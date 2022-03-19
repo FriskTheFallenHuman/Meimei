@@ -35,14 +35,14 @@ if ( vessel )
 		buffer_delete( buffer2 );*/
 	
 	// Copy the file to the working directory
-	file_copy( ddlc_persistent, ( working_directory + ddlc_persistent + ".txt" ) );
+	file_copy( ddlc_persistent, ( working_directory + filename_name(ddlc_persistent) + ".txt" ) );
 }
 
 if ( concluded )
 {
 	// Write our ini file to UTLC directory
 	ini_open( utlc_save_dir + "meimei.ini" );
-		ini_write_real( "VESSEL", "EXPERIMENT", concluded );
+	ini_write_real( "VESSEL", "EXPERIMENT", concluded );
 	ini_close();	
 }
 
