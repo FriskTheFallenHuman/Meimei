@@ -12,12 +12,12 @@ enum INTERACTION_STATUS {
 	RELEASED
 }
 
-global.KEYCODE_ALIASES[vk_enter] = "Enter";
-global.KEYCODE_ALIASES[vk_shift] = "Shift";
-global.KEYCODE_ALIASES[vk_control] = "Ctrl";
-global.KEYCODE_ALIASES[ord("Z")] = "Z";
-global.KEYCODE_ALIASES[ord("X")] = "X";
-global.KEYCODE_ALIASES[ord("C")] = "C";
+global.KB_KEYCODE_ALIASES[vk_enter] = "Enter";
+global.KB_KEYCODE_ALIASES[vk_shift] = "Shift";
+global.KB_KEYCODE_ALIASES[vk_control] = "Ctrl";
+global.KB_KEYCODE_ALIASES[ord("Z")] = "Z";
+global.KB_KEYCODE_ALIASES[ord("X")] = "X";
+global.KB_KEYCODE_ALIASES[ord("C")] = "C";
 
 
 
@@ -32,7 +32,40 @@ function INTERACTION_MAPPINGS() constructor
     }
 }
 
-function INTERACTION_MAPPING_KEY_KEYBOARD(_KEYCODE) constructor
+
+#macro ERROR_NOT_IMPLEMENTED "Not implemented"
+
+function INTERACTION_MAPPING_KEY() constructor
+{
+	static IS_HELD = function()
+	{
+		throw ERROR_NOT_IMPLEMENTED;
+	}
+	static IS_PRESSED = function()
+	{
+		throw ERROR_NOT_IMPLEMENTED;
+	}
+	static IS_RELEASED = function()
+	{
+		throw ERROR_NOT_IMPLEMENTED;
+	}
+
+	static CLEAR = function()
+	{
+		throw ERROR_NOT_IMPLEMENTED;
+	}
+
+	static GET_ALIAS = function()
+	{
+		throw ERROR_NOT_IMPLEMENTED;
+	}
+	static toString = function()
+	{
+		return GET_ALIAS();
+	}
+}
+
+function INTERACTION_MAPPING_KEY_KEYBOARD(_KEYCODE) : INTERACTION_MAPPING_KEY() constructor
 {
 	KEYCODE = _KEYCODE;
 
@@ -49,15 +82,17 @@ function INTERACTION_MAPPING_KEY_KEYBOARD(_KEYCODE) constructor
 		return keyboard_check_released(KEYCODE);
 	}
 
+	static CLEAR = function()
+	{
+		keyboard_clear(KEYCODE);
+	}
+
 	static GET_ALIAS = function()
 	{
-		return global.KEYCODE_ALIASES[KEYCODE];
-	}
-	static toString = function()
-	{
-		return GET_ALIAS();
+		return global.KB_KEYCODE_ALIASES[KEYCODE];
 	}
 }
+
 
 function INTERACTION_MAPPING(_KEYS) constructor
 {
@@ -92,8 +127,7 @@ function INTERACTION_MAPPING(_KEYS) constructor
     {
 		for (var INDEX = 0; INDEX < array_length(KEYS); INDEX++)
 		{
-			var KEY = KEYS[INDEX];
-			keyboard_clear(KEY);
+			KEYS[INDEX].CLEAR();
 		}
     }
 }
