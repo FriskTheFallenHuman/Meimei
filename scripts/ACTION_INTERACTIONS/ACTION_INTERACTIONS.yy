@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "脚本",
-    "path": "folders/脚本.yy",
+    "name": "INTERACTIONS",
+    "path": "folders/Scripts/INTERACTIONS.yy",
   },
   "resourceVersion": "1.0",
   "name": "ACTION_INTERACTIONS",

@@ -26,3 +26,5 @@ original_caption = "Meimei";
 interpolated_caption = original_caption;
 window_set_caption(zalgoizer_zalgoize(original_caption));
 alarm[0] = 2;
+
+application_surface_draw_enable(false);

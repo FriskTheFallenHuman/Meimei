@@ -14,8 +14,8 @@
   "soundFile": "AUDIO_MEETING",
   "duration": 5.356168,
   "parent": {
-    "name": "声音",
-    "path": "folders/声音.yy",
+    "name": "Sounds",
+    "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
   "name": "AUDIO_MEETING",

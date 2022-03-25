@@ -1,3 +1,4 @@
+display_set_gui_size(-1, -1);
 var _h = display_get_gui_height();
 var _w = display_get_gui_width();
 
@@ -14,6 +15,8 @@ shader_set(shdBktGlitch);
 
 //setting the resolution
 BktGlitch_set_resolution_of_application_surface();
+
+randomise();
 
 //passing time to the shader (making sure nothing stays static)
 BktGlitch_set_time(current_time * 0.06);
@@ -34,7 +37,13 @@ BktGlitch_set_intensity(0.05 + intensity); //adding additional intensity when th
 
 //drawing the application surface
 draw_surface(application_surface, 0, 0);
+//gpu_set_blendmode(bm_dest_alpha);
+draw_surface(global.textsurface, 0, 0);
+//gpu_set_blendmode(bm_normal);
 
 //done using the shader
 shader_reset();
 
+surface_set_target(global.textsurface);
+draw_clear_alpha(c_black, 0);
+surface_reset_target();

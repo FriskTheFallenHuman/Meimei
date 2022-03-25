@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "parameters",
-    "path": "folders/Scripts/BktGlitch/parameters.yy",
+    "name": "INTERACTIONS",
+    "path": "folders/Scripts/INTERACTIONS.yy",
   },
   "resourceVersion": "1.0",
-  "name": "BktGlitch_set_jumble_resolution",
+  "name": "ACTION_INTERACTIONS_KEY_ALIASES",
   "tags": [],
   "resourceType": "GMScript",
 }
