@@ -1,25 +1,6 @@
 // Huge input system
 // By Dobby233Liu
 
-enum INTERACTION_TYPE {
-	CONFIRM,
-	INPUT_CONFIRM
-}
-enum INTERACTION_STATUS {
-	OFF,
-	HOLD,
-	PRESSED,
-	RELEASED
-}
-
-global.KB_KEYCODE_ALIASES[vk_enter] = "Enter";
-global.KB_KEYCODE_ALIASES[vk_shift] = "Shift";
-global.KB_KEYCODE_ALIASES[vk_control] = "Ctrl";
-global.KB_KEYCODE_ALIASES[ord("Z")] = "Z";
-global.KB_KEYCODE_ALIASES[ord("X")] = "X";
-global.KB_KEYCODE_ALIASES[ord("C")] = "C";
-
-
 
 function INTERACTION_MAPPINGS() constructor
 {
@@ -89,7 +70,14 @@ function INTERACTION_MAPPING_KEY_KEYBOARD(_KEYCODE) : INTERACTION_MAPPING_KEY() 
 
 	static GET_ALIAS = function()
 	{
-		return global.KB_KEYCODE_ALIASES[KEYCODE];
+		try
+		{
+			return global.KB_KEYCODE_ALIASES[KEYCODE];
+		}
+		catch (_)
+		{
+			return global.KB_KEYCODE_ALIASES[-1];
+		}
 	}
 }
 
@@ -132,25 +120,8 @@ function INTERACTION_MAPPING(_KEYS) constructor
     }
 }
 
-
-var INTERACTION_KEYS = {
-	SHIFT: new INTERACTION_MAPPING_KEY_KEYBOARD(vk_shift),
-	ENTER: new INTERACTION_MAPPING_KEY_KEYBOARD(vk_enter),
-	// Z: new INTERACTION_MAPPING_KEY_KEYBOARD(ord("Z")),
-	X: new INTERACTION_MAPPING_KEY_KEYBOARD(ord("X"))
-};
-global.INTERACTION_MAPPINGS = new INTERACTION_MAPPINGS();
-global.INTERACTION_MAPPINGS.SET_MAPPING(
-	INTERACTION_TYPE.CONFIRM,
-	new INTERACTION_MAPPING([INTERACTION_KEYS.SHIFT, INTERACTION_KEYS.X])
-);
-global.INTERACTION_MAPPINGS.SET_MAPPING(
-	INTERACTION_TYPE.INPUT_CONFIRM,
-	new INTERACTION_MAPPING([INTERACTION_KEYS.ENTER]) // , INTERACTION_KEYS.Z])
-);
-
+ACTION_INTERACTIONS_CONFIG();
 global.INTERACTION_STATUS = array_create(array_length(global.INTERACTION_MAPPINGS.MAPPINGS));
-
 
 function array_join(array, sep = " ")
 {

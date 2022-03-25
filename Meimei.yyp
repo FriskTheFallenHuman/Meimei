@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"ACTION_INTERACTIONS_CONFIG","path":"scripts/ACTION_INTERACTIONS_CONFIG/ACTION_INTERACTIONS_CONFIG.yy",},"order":1,},
     {"id":{"name":"IMAGE_IT","path":"sprites/IMAGE_IT/IMAGE_IT.yy",},"order":1,},
     {"id":{"name":"AUDIO_NOISE","path":"sounds/AUDIO_NOISE/AUDIO_NOISE.yy",},"order":1,},
     {"id":{"name":"AUDIO_MEETING","path":"sounds/AUDIO_MEETING/AUDIO_MEETING.yy",},"order":3,},
@@ -18,6 +19,7 @@
     {"id":{"name":"BktGlitch_set_jumble_speed","path":"scripts/BktGlitch_set_jumble_speed/BktGlitch_set_jumble_speed.yy",},"order":17,},
     {"id":{"name":"BktGlitch_set_jumble_resolution","path":"scripts/BktGlitch_set_jumble_resolution/BktGlitch_set_jumble_resolution.yy",},"order":19,},
     {"id":{"name":"BktGlitch_set_jumble_shift","path":"scripts/BktGlitch_set_jumble_shift/BktGlitch_set_jumble_shift.yy",},"order":21,},
+    {"id":{"name":"ACTION_INTERACTIONS_KEY_ALIASES","path":"scripts/ACTION_INTERACTIONS_KEY_ALIASES/ACTION_INTERACTIONS_KEY_ALIASES.yy",},"order":2,},
     {"id":{"name":"I deleted some groups for no reason","path":"notes/I deleted some groups for no reason/I deleted some groups for no reason.yy",},"order":20,},
     {"id":{"name":"BktGlitch_set_channel_shift","path":"scripts/BktGlitch_set_channel_shift/BktGlitch_set_channel_shift.yy",},"order":23,},
     {"id":{"name":"BktGlitch_set_rng_seed","path":"scripts/BktGlitch_set_rng_seed/BktGlitch_set_rng_seed.yy",},"order":25,},
@@ -35,7 +37,7 @@
     {"id":{"name":"shdBktGlitch","path":"shaders/shdBktGlitch/shdBktGlitch.yy",},"order":1,},
     {"id":{"name":"fnt_main","path":"fonts/fnt_main/fnt_main.yy",},"order":1,},
     {"id":{"name":"PROCESS_MEETING","path":"objects/PROCESS_MEETING/PROCESS_MEETING.yy",},"order":1,},
-    {"id":{"name":"ACTION_INTERACTIONS","path":"scripts/ACTION_INTERACTIONS/ACTION_INTERACTIONS.yy",},"order":3,},
+    {"id":{"name":"ACTION_INTERACTIONS","path":"scripts/ACTION_INTERACTIONS/ACTION_INTERACTIONS.yy",},"order":0,},
     {"id":{"name":"PROCESS_INPUT","path":"objects/PROCESS_INPUT/PROCESS_INPUT.yy",},"order":3,},
     {"id":{"name":"PROCESS_IMAGERY","path":"objects/PROCESS_IMAGERY/PROCESS_IMAGERY.yy",},"order":5,},
     {"id":{"name":"PLACE_MEETING","path":"rooms/PLACE_MEETING/PLACE_MEETING.yy",},"order":1,},
@@ -64,6 +66,7 @@
     {"folderPath":"folders/Fonts.yy","order":13,"resourceVersion":"1.0","name":"Fonts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects.yy","order":17,"resourceVersion":"1.0","name":"Objects","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Rooms.yy","order":19,"resourceVersion":"1.0","name":"Rooms","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Scripts/INTERACTIONS.yy","order":9,"resourceVersion":"1.0","name":"INTERACTIONS","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
