@@ -5,12 +5,8 @@ if ( found == false )
 if ( vessel )
 {
 	// Copy the file to the working directory
-	if (file_exists(ddlc_persistent)) {
-		show_message("[Perisistent] I Exist");
-		file_copy( ddlc_persistent, ( working_directory + filename_name(ddlc_persistent) ) );
-	} else {
-		show_message("[Perisistent] Bruh");
-	}
+	if (file_exists(ddlc_persistent))
+		file_copy(ddlc_persistent, (working_directory + filename_name(ddlc_persistent)));
 
 	// Dump our data file
 	var pdataa = rpy_persistent_read("persistent");
@@ -23,15 +19,12 @@ if ( vessel )
 	}
 	file_text_write_string(file, dump);
 	file_text_close(file);
-	
+
 	//show_message(dump);
 
-	if (file_exists(file)) {
-		show_message("I Exist");	
-		//file_copy( file, ( working_directory + filename_name(file) ) );
-	} else {
-		show_message("Bruh");
-	}
+	//TODO: Figure a way to copy the dumped file into our mod save directory
+	//if (file_exists(file))
+	//	file_copy( ( working_directory + filename_name(file) ), ( utlc_save_dir + filename_name(file) ) );
 }
 
 if ( concluded )
