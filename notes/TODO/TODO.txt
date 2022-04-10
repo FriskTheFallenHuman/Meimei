@@ -1,2 +1,3 @@
 - MacOs/Linux Port
 - Propper Executable Icon
+- Figure out a way to copy the dumped persistent.txt file
