@@ -4,38 +4,34 @@ if ( found == false )
 
 if ( vessel )
 {
-	// Decompress the persistent file
-	// TODO
-	/*var buffer = -1, buffer2 = -1;
-	buffer = buffer_load( ddlc_persistent );
-	if ( buffer < 0 )
-	{
-		show_message( "Couldn't load buffer." );
-		exit; 
-	}
-	
-	//buffer2 = buffer_deflate( buffer, 0, buffer_get_size( buffer ), 1 );
-	buffer2 = buffer_decompress(buffer);
-	if ( buffer2 < 0 ) 
-	{
-		show_message( "Couldn't deflate error" );
-		exit;
-	}
-
-	var buffer_savefile = get_save_filename("*.txt*", "");
-	if ( buffer_savefile == "" ) 
-		exit;
-
-	buffer_save_ext( buffer2, buffer_savefile, 0, buffer_tell( buffer2 ) );
-	
-    if ( buffer != -1 ) 
-		buffer_delete( buffer );
-
-    if ( buffer2 != -1 ) 
-		buffer_delete( buffer2 );*/
-	
 	// Copy the file to the working directory
-	file_copy( ddlc_persistent, ( working_directory + filename_name(ddlc_persistent) + ".txt" ) );
+	if (file_exists(ddlc_persistent)) {
+		show_message("[Perisistent] I Exist");
+		file_copy( ddlc_persistent, ( working_directory + filename_name(ddlc_persistent) ) );
+	} else {
+		show_message("[Perisistent] Bruh");
+	}
+
+	// Dump our data file
+	var pdataa = rpy_persistent_read("persistent");
+	var pdata = rpy_persistent_convert_from_abstract(pdataa);
+	var dump = "";
+	var file = file_text_open_write("persistent.txt");
+	var keys = variable_struct_get_names(pdata);
+	for (var i = 0; i < array_length(keys); i++) {
+		dump += keys[i] + " = " + string(pdata[$ keys[i]]) + "\n";
+	}
+	file_text_write_string(file, dump);
+	file_text_close(file);
+	
+	//show_message(dump);
+
+	if (file_exists(file)) {
+		show_message("I Exist");	
+		//file_copy( file, ( working_directory + filename_name(file) ) );
+	} else {
+		show_message("Bruh");
+	}
 }
 
 if ( concluded )

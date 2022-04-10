@@ -4,7 +4,7 @@
     "path": "Meimei.yyp",
   },
   "resourceVersion": "1.1",
-  "name": "I deleted some groups for no reason",
+  "name": "LICENSE",
   "tags": [],
   "resourceType": "GMNotes",
 }

@@ -1,0 +1,2 @@
+- MacOs/Linux Port
+- Propper Executable Icon

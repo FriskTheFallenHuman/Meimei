@@ -33,7 +33,11 @@ switch( os_type )
 		break;
 }
 
-if directory_exists(utlc_save_dir)
+// Create our directory if doesn't Exist
+if (!directory_exists(utlc_save_dir))
+	directory_create(utlc_save_dir)
+
+if (directory_exists(utlc_save_dir))
 {
 	found_utlc = true;
 	// Write our ini file to UTLC directory
@@ -50,6 +54,7 @@ function prep_con_inc(seconds = 4)
 	if( alarm[0] <= 0 )
 		alarm[0] = seconds * room_speed;
 }
+
 function show_input()
 {
 	if ( !instance_exists( TEXTINPUTOBJ ) )
@@ -64,6 +69,7 @@ function show_input()
 	}
 	return TEXTINPUTOBJ;
 }
+
 function hide_input()
 {
 	instance_destroy(TEXTINPUTOBJ);
